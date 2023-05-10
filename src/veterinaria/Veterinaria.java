@@ -12,7 +12,6 @@ public class Veterinaria {
 	private ArrayList <Perro> perros;
 	private ArrayList <Atencion> atenciones;
 	private ArrayList <Gato> gatos;
-	private String direccion;
 	
 	public Veterinaria(String nombre2) {
 		this.nombre=nombre2;
