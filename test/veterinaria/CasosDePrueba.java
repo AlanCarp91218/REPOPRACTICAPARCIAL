@@ -10,7 +10,7 @@ import org.junit.Test;
 public class CasosDePrueba {
 
 	@Test
-	public void QueSePuedaAgregarUnNuevoCliente() {
+	public void QueSePuedaAgregarUnNuevoClienteALaVeterinaria() {
 		
 	  String nombre2 = "Veterinaria";
 	  Veterinaria veterinaria = new Veterinaria(nombre2);
@@ -30,8 +30,9 @@ public class CasosDePrueba {
 	
 	
 	
+
 	@Test
-	public void QueSePuedaAgregarUnPerroYSuPrecioSea2000() {
+	public void QueSePuedaAgregarUnPerroYSuPrecioSea2500() {
 		
 	  String nombre2 = "Veterinaria";
 	  Veterinaria veterinaria = new Veterinaria(nombre2);
@@ -40,7 +41,7 @@ public class CasosDePrueba {
 	  String sexo= "Macho";
 	  String raza = "caniche";
 	  
-	  final Integer PRECIO_ESPERADO=2000;
+	  final Integer PRECIO_ESPERADO=2500;
 	  Perro perro = new Perro (nombre,sexo,raza);
 	  
 	  veterinaria.agregarPerro(perro);
@@ -51,16 +52,16 @@ public class CasosDePrueba {
 	
 	
 	@Test
-	public void QueSePuedaAgregarUnGatoYSuPrecioSea2500() {
+	public void QueSePuedaAgregarUnGatoYSuPrecioSea3000() {
 		
 	  String nombre2 = "Veterinaria";
 	  Veterinaria veterinaria = new Veterinaria(nombre2);
 	  
-	  String nombre="Toby";
+	  String nombre="Tomas";
 	  String sexo= "Macho";
-	  String raza = "caniche";
+	  String raza = "Siames";
 	  
-	  final Integer PRECIO_ESPERADO=2500;
+	  final Integer PRECIO_ESPERADO=3000;
 	  Gato gato = new Gato (nombre,sexo,raza);
 	  
 	  veterinaria.agregarGato(gato);
@@ -87,7 +88,7 @@ public class CasosDePrueba {
 		 String apellido2="Viola";
 		 String email2= "melinabelen@gmail.com";
 		 Integer telefono2= 78484800;
-		 Integer dni2= 46782103;
+		 Integer dni2= 45128320;
 		 Integer conteoCuentas=1;
 		  
 		 Cliente clienteNuevo2 = new Cliente (nombre4,apellido2,email2,telefono2,dni2);
@@ -95,9 +96,6 @@ public class CasosDePrueba {
 		 assertTrue(veterinaria.agregarCliente(clienteNuevo));
 		 assertFalse(veterinaria.agregarCliente(clienteNuevo2));
 		 assertEquals(conteoCuentas, veterinaria.getCantidadCuentas());
-
-		 
-		
 		
 	}
 	
@@ -136,7 +134,6 @@ public class CasosDePrueba {
 	 assertNotNull(exitoso);
 	 assertTrue(exitoso);
 	 
-	 
 	}
 	
 	@Test
@@ -155,7 +152,7 @@ public class CasosDePrueba {
 	 
 	 veterinaria.agregarCliente(clienteNuevo);
 	  
-	 String nombre3="Toby";
+	 String nombre3="Tomas";
 	 String sexo= "Macho";
 	 String raza = "Siames";
 	  
@@ -176,7 +173,6 @@ public class CasosDePrueba {
 	 
 	}
 
-	
 
 
 	@Test
