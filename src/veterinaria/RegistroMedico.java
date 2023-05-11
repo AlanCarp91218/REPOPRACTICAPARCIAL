@@ -64,7 +64,7 @@ public class RegistroMedico {
 		this.gato = gato;
 	}
 
-	
+	 
 
 	
 
