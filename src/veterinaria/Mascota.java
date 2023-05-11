@@ -6,9 +6,9 @@ public abstract class Mascota {
 	private String sexo;
 	private String raza;
 	
-	public Mascota(String nombre2, String sexo2,String raza) {
-		this.nombre=nombre2;
-		this.sexo=sexo2;
+	public Mascota(String nombre, String sexo,String raza) {
+		this.nombre=nombre;
+		this.sexo=sexo;
 		this.raza=raza;
 	
 	}

@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 public class Veterinaria {
 	
@@ -12,6 +13,7 @@ public class Veterinaria {
 	private ArrayList <Perro> perros;
 	private ArrayList <Atencion> atenciones;
 	private ArrayList <Gato> gatos;
+	private ArrayList<RegistroMedico> registro;
 	
 	public Veterinaria(String nombre2) {
 		this.nombre=nombre2;
@@ -19,6 +21,7 @@ public class Veterinaria {
 		this.perros= new ArrayList <> ();
 		this.atenciones= new ArrayList <>();
 		this.gatos=new ArrayList <> ();
+		this.registro=new ArrayList<>();
 	}
 
 	public Boolean agregarCliente(Cliente clienteNuevo) {
@@ -41,7 +44,7 @@ public class Veterinaria {
 		this.clientes = clientes;
 	}
 
-	public Boolean agregarPerro(Perro perro) {
+	public Boolean asignacionPerroCliente(Cliente clienteNuevo,Perro perro) {
 		return this.perros.add(perro);
 	}
 	
@@ -165,10 +168,36 @@ public class Veterinaria {
 		return null;
 		
 	}
+//--------------------------------------------------------------------------------------------
+	public boolean agregarPerro(Perro perro) {
+		return perros.add(perro);
+	}
+	
+	public boolean agregarRegistroMedico(Perro perro, RegistroMedico registroMedico) {
+		return registro.add(registroMedico);
+	}
 
+	public RegistroMedico buscarRegistroMedicoPorFechaYNombreMascota(Perro perro, LocalDateTime fechaYHora) {
+		for(RegistroMedico nuevoRegistro : registro) {
+			if(nuevoRegistro.getLocalDate().equals(fechaYHora) && (nuevoRegistro.getPerro().getNombre().equals(perro.getNombre()))){
+				return nuevoRegistro;
+			}
+		}
+		return null;
+	}
 	
-	
-	
+	public List <RegistroMedico> verificarHistorialMedico(Perro perro) {
+		return registro;
+	}
+	public boolean eliminarRegistroMedico(Perro perro, RegistroMedico registroMedico) {
+		return registro.remove(registroMedico);
+	}
+	public ArrayList<RegistroMedico> getRegistrosMedicos() {
+		return registro;
+	}
+	public Integer getCantidadRegistros() {
+		return registro.size();
+	}
 	
 
 	}
