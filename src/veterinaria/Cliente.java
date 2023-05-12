@@ -9,6 +9,10 @@ public class Cliente {
 	private String email;
 	private Integer telefono;
 	private Integer dni;
+	private Perro perro;
+	private Gato gato;
+	private Aves ave;
+	private Roedores roedor;
 	
 
 	public Cliente(String nombre, String apellido, String email, Integer telefono, Integer dni) {
@@ -17,8 +21,6 @@ public class Cliente {
 		this.telefono=telefono;
 		this.dni=dni;
 		this.email=email;
-	
-	
 	}
 
 
@@ -72,6 +74,45 @@ public class Cliente {
 	}
 
 
+	public Perro getPerro() {
+		return perro;
+	}
+
+
+	public void setPerro(Perro perro) {
+		this.perro = perro;
+	}
+
+
+	public Gato getGato() {
+		return gato;
+	}
+
+
+	public void setGato(Gato gato) {
+		this.gato = gato;
+	}
+	
+	public Aves getAve() {
+		return ave;
+	}
+
+
+	public void setAve(Aves ave) {
+		this.ave = ave;
+	}
+
+
+	public Roedores getRoedor() {
+		return roedor;
+	}
+
+
+	public void setRoedor(Roedores roedor) {
+		this.roedor = roedor;
+	}
+
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(dni);
@@ -98,8 +139,4 @@ public class Cliente {
 				+ ", dni=" + dni + "]";
 	}
 
-	
-	
-	
-	
 }

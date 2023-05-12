@@ -1,31 +1,30 @@
 package veterinaria;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class RegistroMedico {
 	 
 	private String tratamiento;
 	private LocalDateTime LocalDate;
-	private String diagnostico;
+	private String motivo;
 	private Perro perro;
 	private Gato gato;
+	private Cliente cliente;
 	
-	
-	public RegistroMedico(LocalDateTime fechaYHora, String diagnostico,String tratamiento, Perro perro) {
+	public RegistroMedico(Cliente clienteNuevo, LocalDateTime fechaYHora, String motivo,String tratamiento, Perro perro) {
+		this.cliente=clienteNuevo;
 		this.perro=perro;
-		this.diagnostico=diagnostico;
+		this.motivo=motivo;
 		this.LocalDate=fechaYHora;
 		this.tratamiento=tratamiento;
-		
-	}
-	
-	public String getDiagnostico() {
-		return diagnostico;
+		}
+
+	public String getMotivo() {
+		return motivo;
 	}
 
-	public void setDiagnostico(String diagnostico) {
-		this.diagnostico = diagnostico;
+	public void setMotivo(String motivo) {
+		this.motivo = motivo;
 	}
 
 	public String getProcedimiento() {
@@ -64,12 +63,11 @@ public class RegistroMedico {
 		this.gato = gato;
 	}
 
-	 
+	public Cliente getCliente() {
+		return cliente;
+	}
 
-	
-
-
-	
-
-	
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
 }

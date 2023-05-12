@@ -2,23 +2,27 @@ package veterinaria;
 
 public class Perro extends Mascota {
 	
-	private Integer precio;
-	Cliente clineteNuevo;
+	private Integer precioAtencion;
 	
-	public Perro(String nombre, String sexo,String raza) {
-		super(nombre, sexo,raza);	
-		this.precio=2500;
-		
+	public Perro(String nombre, String sexo,String raza,Double peso) {
+		super(nombre, sexo,raza,peso);	
+		this.precioAtencion=2500;
 	}
 
 	public Integer getPrecio() {
-		return precio;
+		return precioAtencion;
 	}
 
 	public void setPrecio(Integer precio) {
-		this.precio = precio;
+		this.precioAtencion = precio;
 	}
 
+	@Override
+	public void precioPorPeso() {
+		if (super.getPeso() > 6.0d) {
+			this.precioAtencion=3000;			
+		}
 	
-	
+	}
+
 }

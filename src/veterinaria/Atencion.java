@@ -10,6 +10,8 @@ public class Atencion {
 	private String motivo;
 	private Gato gatos;
 	private Integer id;
+	private Aves ave;
+	private Roedores roedor;
 	
 	
 	public Atencion(Integer id, Cliente clienteNuevo, Perro perro, LocalDateTime fechaYHora, String motivo) {
@@ -27,6 +29,24 @@ public class Atencion {
 		this.motivo=motivo2;
 		this.gatos=gatos;
 		this.id=id;
+	
+	}
+
+	public Atencion(Integer id2, Cliente cliente2, Aves ave2, LocalDateTime fechaYHora2, String motivo2) {
+		this.ave=ave2;
+		this.id=id2;
+		this.cliente=cliente2;
+		this.fechaYHora=fechaYHora2;
+		this.motivo=motivo2;
+	
+	}
+
+	public Atencion(Integer id2, Cliente cliente2, Roedores roedorr, LocalDateTime fechaYHora2, String motivo2) {
+		this.roedor=roedorr;
+		this.id=id2;
+		this.cliente=cliente2;
+		this.fechaYHora=fechaYHora2;
+		this.motivo=motivo2;
 	
 	}
 
@@ -77,6 +97,22 @@ public class Atencion {
 	public void setId(Integer id) {
 		this.id = id;
 	}
+	
+	public Aves getAve() {
+		return ave;
+	}
+
+	public void setAve(Aves ave) {
+		this.ave = ave;
+	}
+
+	public Roedores getRoedor() {
+		return roedor;
+	}
+
+	public void setRoedor(Roedores roedor) {
+		this.roedor = roedor;
+	}
 
 	
 	@Override
@@ -84,9 +120,5 @@ public class Atencion {
 		return "Atencion [cliente=" + cliente + ", perro=" + perro + ", fechaYHora=" + fechaYHora + ", motivo=" + motivo
 				+ ", gatos=" + gatos + ", id=" + id + "]";
 	}
-	
-	
-	
-	
-
+		
 }
