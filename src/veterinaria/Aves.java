@@ -11,7 +11,7 @@ public class Aves extends Mascota {
 
 	@Override
 	public void precioPorPeso() {
-		if (super.getPeso()>12.0d) {
+		if (super.getPeso()>1.0d) {
 			this.precioAtencion=5000;
 		}	
 	}

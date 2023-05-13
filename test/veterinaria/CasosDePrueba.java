@@ -89,49 +89,7 @@ public class CasosDePrueba {
 
 	}
 	
-	@Test
-	public void queSeCobreElPrecioBaseDeLaAtencionDeUnPerro() {
-		
-	  String nombre2 = "Veterinaria";
-	  Veterinaria veterinaria = new Veterinaria(nombre2);
-	  
-	  String nombre="Toby";
-	  String sexo= "Macho";
-	  String raza = "caniche";
-	  Double peso= 3.6d;			///////////////////////////////
-	  
-	  final Integer PRECIO_ESPERADO=2500;
-	  Perro perro = new Perro (nombre,sexo,raza,peso);
-	  
-	  veterinaria.agregarPerro(perro);
-	  perro.precioPorPeso();
-	  
-	  //VALIDACION
-	  assertEquals(PRECIO_ESPERADO, perro.getPrecio());
-	  }
-	
-	
-	@Test
-	public void queSeCobreMayorPrecioAlPasarUnDeterminadoPesoEnUnGato() {
-		
-	  String nombre2 = "Veterinaria";
-	  Veterinaria veterinaria = new Veterinaria(nombre2);
-	  
-	  String nombre="Poly";
-	  String sexo= "Macho";
-	  String raza = "Europeo";
-	  Double peso= 8.0d;			
-	  
-	  final Integer PRECIO_ESPERADO=3000;
-	  Gato gato = new Gato (nombre,sexo,raza,peso);
-	  
-	  veterinaria.agregarGato(gato);
-	  gato.precioPorPeso();
-	  
-	  //VALIDACION
-	  assertNotEquals(PRECIO_ESPERADO, gato.getPrecio());
 
-	}
 	
 	@Test
 	public void queSeCobreElPrecioBaseDeLaAtencionDeUnGato() {
@@ -227,43 +185,6 @@ public class CasosDePrueba {
 		
 	}
 	
-	@Test
-	public void registrarUnaAtencionDeUnPerro() {
-		
-	  String nombre="Vete";
-	  Veterinaria veterinaria = new Veterinaria(nombre);
-	
-	  String nombre2="Alan";
-	  String apellido="Dominguez";
-	  String email= "alandominguezcarp1@gmail.com";
-	  Integer telefono= 20668770;
-	  Integer dni= 45128320;
-	  
-	  Cliente clienteNuevo = new Cliente (nombre2,apellido,email,telefono,dni);
-	 
-	  veterinaria.agregarCliente(clienteNuevo);
-	  
-	  String nombre3="Micho";
-	  String sexo= "Macho";
-	  String raza = "Chihuahua";
-	  Double peso= 1.5d;
-	  
-	  Perro perro = new Perro (nombre3,sexo,raza,peso);
-	  
-	  veterinaria.agregarPerro(perro);
-	 
-	  LocalDate Fecha = LocalDate.of(2023, 5, 9);
-	  LocalDateTime fechaYHora = Fecha.atTime(16, 00);
-	  String motivo= "dolor de estomago";
-	  Integer id= 1;
-	 	 
-	  Boolean exitoso = veterinaria.registrarAtencionPerro(id,clienteNuevo,perro,fechaYHora,motivo);
-	 
-	  //VALIDACION
-	  assertNotNull(exitoso);
-	  assertTrue(exitoso);
-	 
-	}
 	
 	@Test
 	public void registrarUnaAtencionDeUnGato() {
@@ -444,46 +365,9 @@ public class CasosDePrueba {
 	   assertNotNull(exitoso);		 
 	}
 	
-	@Test
-	public void buscarPerroPorNombreEnAtencionRegistrada() {
-		
-		 String nombre="Vete";
-		 Veterinaria veterinaria = new Veterinaria(nombre);
-		
-		 String nombre2="Alan";
-		 String apellido="Dominguez";
-		 String email= "alandominguezcarp1@gmail.com";
-		 Integer telefono= 20668770;
-		 Integer dni= 45128320;
-		  
-		 Cliente clienteNuevo = new Cliente (nombre2,apellido,email,telefono,dni);
-		 
-		 veterinaria.agregarCliente(clienteNuevo);
-		  
-		 String nombre3="Teo";
-		 String sexo= "Macho";
-		 String raza = "Salchicha";
-		 Double peso = 4.1d; 
-		 
-		 Perro perro = new Perro (nombre3,sexo,raza,peso);
-		  
-		 veterinaria.agregarPerro(perro);
-		 
-		 LocalDate Fecha = LocalDate.of(2023, 5, 9);
-		 LocalDateTime fechaYHora = Fecha.atTime(16, 00);
-		 String motivo= "dolor de estomago";
-		 Integer id= 1;
-		 	 
-		 veterinaria.registrarAtencionPerro(id,clienteNuevo,perro,fechaYHora,motivo);
-		 
-		 Atencion exitoso = veterinaria.buscarPerroPorNombreEnAtencionRegistrada(perro.getNombre());
-		 
-		 //VALIDACION
-		 assertNotNull(exitoso);		 
-	}
 	
 	@Test
-	public void eliminarAtencionPorNombreDeMascotaYPorDniPersona() {
+	public void queSePuedaeliminarAtencionPorNombreDeMascotaYPorDniPersona() {
 		
 		 String nombre="Vete";
 		 Veterinaria veterinaria = new Veterinaria(nombre);

@@ -11,7 +11,7 @@ public class Roedores extends Mascota {
 	
 	@Override
 	public void precioPorPeso() {
-		if (super.getPeso()>4.0d) {
+		if (super.getPeso()>1.0d) {
 			this.precioAtencion=4500;
 		}		
 	}

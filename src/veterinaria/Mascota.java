@@ -23,7 +23,6 @@ public abstract class Mascota {
 		this.nombre = nombre;
 	}
 
-
 	public String getSexo() {
 		return sexo;
 	}
